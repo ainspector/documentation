@@ -1,8 +1,10 @@
-var gulp = require('gulp'),
-  nunjucksRender = require('gulp-nunjucks-render'),
-  sass = require('gulp-sass'),
-  marked = require('marked'),
-  markdown = require('nunjucks-markdown');
+
+var browserSync    = require('browser-sync').create(),
+    gulp           = require('gulp'),
+    nunjucksRender = require('gulp-nunjucks-render'),
+    sass           = require('gulp-sass'),
+    marked         = require('marked'),
+    markdown       = require('nunjucks-markdown');
 
 var markedOptions = {
   renderer: new marked.Renderer(),
@@ -26,9 +28,10 @@ gulp.task('nunjucks', function () {
   marked.setOptions(markedOptions);
   markdown.register(env, marked);
 
-  gulp.src('src/*.html')
+  return gulp.src('src/*.html')
     .pipe(nunjucksRender())
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('build'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('images', function () {
@@ -37,14 +40,21 @@ gulp.task('images', function () {
 });
 
 gulp.task('sass', function () {
-  gulp.src('sass/*.scss')
+  return gulp.src('sass/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('build/css'));
+    .pipe(gulp.dest('build/css'))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('watch', function () {
-    gulp.watch(['src/*.html', 'templates/*.html'], ['nunjucks']);
-    gulp.watch('sass/*.scss', ['sass']);
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./build"
+    }
+  });
+
+  gulp.watch(['src/*.html', 'templates/*.html'], ['nunjucks']);
+  gulp.watch('sass/*.scss', ['sass']);
 });
 
 gulp.task('default', ['nunjucks', 'images', 'sass']);
