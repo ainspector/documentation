@@ -1,0 +1,19 @@
+{
+  "name": "static-gulp",
+  "version": "1.0.0",
+  "description": "Static site generator using Gulp and Sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Hoyt",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0",
+    "gulp-nunjucks-render": "^1.1.0",
+    "gulp-sass": "^2.1.1",
+    "marked": "^0.3.5",
+    "nunjucks-markdown": "^1.1.0"
+  }
+}

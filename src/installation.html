@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% set title = "Installation Guide" %}
+{% set description = "Steps for installing the AInspector Sidebar extension as a Firefox Add-on" %}
+
+{% block content %}
+{% markdown %}
+## [Visit the {{ site.mozilla_addons }} page]({{ site.mozilla_url }})
+
+There you will find the latest signed version of AInspector Sidebar. If you are using
+Firefox, you can click the `Add to Firefox` button to install. Otherwise, please
+continue with the following steps.
+
+## Download the XPI file
+
+Please note the following:
+
+* The folder location to which you download the file
+
+* The name of the XPI file, for example: `{{ site.ainspector_xpi_file }}`
+
+## Install within Firefox
+
+Once you have downloaded the XPI file, follow these steps:
+
+* From the main menu in Firefox, go to Tools > Add-ons
+
+* At the top of the Add-ons Manager page, select the "Tools for all add-ons" button (the "gear" icon), and from its menu, select "Install Add-on From File..."
+
+* In the "Select add-on to install" dialog, select the downloaded XPI file and choose "Open"
+
+* An Add-ons Manager dialog box will appear &#8211; select the "Install Now" button
+
+* When prompted, select the "Restart Firefox" button
+{% endmarkdown %}
+{% endblock %}

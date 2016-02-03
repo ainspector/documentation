@@ -1,0 +1,43 @@
+{% from "settings.html" import site, guides, latest %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Bootstrap: Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/{{latest.bootstrap}}/css/bootstrap.min.css">
+<!-- Bootstrap: Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/{{latest.bootstrap}}/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/main.css">
+<title>{% if home_page %}Home: {{ site.name }}{% elif about_page %}About: {{ site.name }}{% else %}{{ title }}: {{ site.name }}{% endif %}</title>
+</head>
+
+<body>
+<header>
+{% include "header.html" %}
+</header>
+
+<main class="container">
+<div class="row">
+<div class="col-sm-9 post-content">
+<h1 class="page-title">{{ title }}</h1>
+{% if description %}
+<p class="post-description">{{ description }}</p>
+{% endif %}
+{% block content %}
+{% endblock %}
+</div>
+<div class="col-sm-3" role="navigation" aria-label="User Guides">
+<h2>User Guides</h2>
+<ul class="post-list">
+{% for item in guides %}
+<li><a href="{{ item.url }}">{{ item.text }}</a></li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/{{latest.jquery}}/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/{{latest.bootstrap}}/js/bootstrap.min.js"></script>
+</body>
+</html>

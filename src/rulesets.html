@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% set title = "Rulesets" %}
+
+{% block content %}
+{% markdown %}
+Rulesets are collections of accessibility rules derived from a particular set of conformance goals with respect to web accessibility requirements and standards.
+
+A primary goal, shared by both rulesets described below, is WCAG 2.0 Level A and AA conformance.
+
+The rulesets included with AInspector Sidebar were created in conjunction with the [OpenAjax Alliance Accessibility Task Force](http://www.openajax.org/member/wiki/Accessibility), and are based on the [W3C Web Content Authoring Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/) and other W3C accessibility standards, including the [W3C Accessible Rich Internet Applications (ARIA) 1.0](http://www.w3.org/TR/wai-aria/) specification.
+
+To select a ruleset, open the **Preferences** dialog and select the **Evaluation** panel. Two rulesets are currently available:
+
+## HTML5 and ARIA Techniques
+
+Evaluation of WCAG 2.0 Level A and AA conformance using HTML5 and ARIA accessibility techniques
+
+ARIA Landmarks are required for the identification and labeling of the sections of content on a web page. The ruleset requires the use of ARIA widget roles for identifying and describing interactive elements (e.g. popup menus, grids, trees, etc.) that cannot be not described by the native semantics of HTML5 form control and links elements.
+
+* Version: {{ site.evaluation_library_version }}
+* Total Rules: 128
+* Required Rules: 115
+* Recommended Rules: 13
+
+## HTML4 Legacy Techniques
+
+Evaluation of WCAG 2.0 Level A and AA conformance using HTML4 accessibility techniques, but allows for the use of HTML5 and ARIA techniques
+
+ARIA landmarks are NOT required, but if used must follow landmark and sectioning element requirements as outlined in HTML5 and ARIA. The ruleset does NOT require the use of ARIA widget roles for identifying and describing interactive elements (e.g. popup menus, grids, trees, etc.) that cannot be not described by the native semantics of HTML4 and HTML5 form control and link elements.
+
+This means the developer will need to do more manual checking and have a high-level understanding of assistive technologies to describe widgets (typically using offscreen text and/or small images with ALT text) and define and manage the roles, properties and states of interactive elements.
+
+* Version: {{ site.evaluation_library_version }}
+* Total Rules: 118
+* Required Rules: 77
+* Recommended Rules: 41
+{% endmarkdown %}
+{% endblock %}

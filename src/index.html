@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% set title = "AInspector Sidebar" %}
+{% set description = "Welcome to the documentation resources website!" %}
+{% set home_page = true %}
+
+{% block content %}
+{% markdown %}
+To install the latest version, `v{{ site.ainspector_version}}`, please visit the [**{{ site.mozilla_addons }} page**]({{ site.mozilla_url }}).
+
+<img src="images/summary.png" alt="Summary view screen shot"/>
+{% endmarkdown %}
+{% endblock %}

@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% set title = "About AInspector Sidebar" %}
+{% set about_page = true %}
+
+{% block content %}
+{% markdown %}
+AInspector Sidebar is a web accessibility evaluation tool that applies the rules from a selected ruleset to the live DOM of the page currently loaded in the browser. You install it as a Firefox Add-on available from the Mozilla Add-ons website.
+
+Once installed, AInspector Sidebar can be selectively loaded into the sidebar panel of any Firefox browser tab, and once loaded, it automatically displays evaluation results whenever a new page is visited in that tab.
+
+Evaluation results are organized by *rule categories*, *rules* within a category, and *elements* that pertain to a particular *rule* result. Links are provided at the element level for launching the Firefox DOM Inspector.
+
+### Resources
+
+* Visit the [{{ site.mozilla_addons }} page]({{ site.mozilla_url }}) to install the latest version of AInspector Sidebar.
+
+* See [Getting Started](overview.html), [Concepts and Terms](concepts.html) and the other User Guides on this site for more information on using AInspector Sidebar and understanding its evaluation results.
+
+* Subscribe to the [OAA Tools Announcements](https://lists.illinois.edu/lists/subscribe/oaa-tools-announcements)
+list to receive an email notification when a new release is added.
+
+## Release Notes
+
+### v1.0.0-beta.2
+
+21 Jan 2016 &mdash; OAA Evaluation Library v1.0.0-beta.4
+
+* Updated paths to devtools modules for compatibility with Firefox 44
+* Fully reviewed and available at [{{ site.mozilla_addons }}](https://addons.mozilla.org/en-US/firefox/addon/ainspector-sidebar/)
+
+### v1.0.0-beta.1
+
+1 Oct 2015 &mdash; OAA Evaluation Library v1.0.0-beta.3
+
+* Incorporates the latest OAA Evaluation Library Beta release
+* Additional rule messaging updates: Images, Reading Order
+* Fully reviewed and available at [{{ site.mozilla_addons }}](https://addons.mozilla.org/en-US/firefox/addon/ainspector-sidebar/versions/)
+
+### v0.16.8.7
+
+25 Sep 2015 &mdash; OAA Evaluation Library v1.0.0-beta.2
+
+* Incorporates the latest OAA Evaluation Library
+* Many rule messaging updates: Landmarks, Images, Reading Order
+* Updated Firefox compatibility version to 41.*
+
+### v0.16.8.6
+
+17 Sep 2015 &mdash; OAA Evaluation Library v1.0.0-beta.1
+
+* Incorporates the latest OAA Evaluation Library
+* New rules added and many others updated
+
+### v0.16.8.5
+
+31 Aug 2015 &mdash; OAA Evaluation Library v0.9.9.1a
+
+* Updated code to use SidebarUI API, which includes a toggle method that replaces the deprecated toggleSidebar function.
+* Fully reviewed and available at [{{ site.mozilla_addons }}](https://addons.mozilla.org/en-US/firefox/addon/ainspector-sidebar/versions/)
+
+### v0.16.8.4
+
+26 Aug 2015 &mdash; OAA Evaluation Library v0.9.9.1a
+
+* Incorporates the latest OAA Evaluation Library
+* Replaced code that utilized deprecated FUEL API with code that utilizes XPCOM to get and set preferences
+* Updated Firefox compatibility version to 40.*
+
+### v0.16.8.3
+
+28 May 2015 &mdash; OAA Evaluation Library v0.9.9.1
+
+* Incorporates the latest OAA Evaluation Library
+* Updated Firefox compatibility version to 38.*
+
+### v0.16.8.2
+
+29 Apr 2015 &mdash; OAA Evaluation Library v0.9.8.2
+
+* Added keyboard shortcut for toggling the sidebar in Firefox: `Ctrl` `Shift` `u` (Mac: `Cmd` `Shift` `u`)
+* Incorporates the latest OAA Evaluation Library
+* Updated Firefox compatibility version to 37.*
+
+### v0.16.8.1
+
+12 Mar 2015 &mdash; OAA Evaluation Library v0.9.8.1
+
+* Incorporates the latest OAA Evaluation Library, which includes bug fixes.
+* Began using JSHint in conjunction with refactoring code in AInspector.
+
+### v0.16.8
+3 Mar 2015 &mdash; OAA Evaluation Library v0.9.8
+
+* Incorporates the latest OAA Evaluation Library, which includes:
+  * Updates, in the Tables category, to rules for data table headers, accessible names and descriptions
+  * The addition, in the Keyboard Support category, of the "Skip to main content link" rule
+* Added keyboard shortcut for opening Preferences dialog: `Ctrl` `.` (on the Mac: `Cmd` `.`)
+* Updated Firefox compatibility version to 36.*
+
+### v0.16.7.3
+12 Feb 2015 &mdash; OAA Evaluation Library v0.9.7.4
+
+* Incorporates the latest OAA Evaluation Library, which includes:
+  * The new 'HTML4 Legacy Techniques' ruleset
+  * Bugfixes to individual rules
+* Updated Firefox compatibility version to 35.*
+* Includes new logo image.
+
+### v0.16.7.2
+15 Jan 2015 &mdash; OAA Evaluation Library v0.9.7.2
+
+* Incorporates the latest OAA Evaluation Library, which includes fixes for event processing and inadvertent changes to Rule API.
+* Updated 'About' dialog with more specific information re. the OAA Evaluation Library.
+* Updated evaluatorFactory method call to sync with recent evaluation library API modifications.
+* Added comments tagged with @external and @global JSDoc indicators.
+
+
+### v0.16.7
+15 Dec 2014 &mdash; OAA Evaluation Library Rev. 2489
+
+* Improved keyboard support and screen reader compatibility (see below).
+* Layout improvements for cross-platform consistency in Windows, Linux and Mac OS X.
+* Data model and controller code modifications for compatibility with new OpenAjax Evaluation Library APIs.
+* The addition of a new preference (Preferences > General > Screen reader compatibility), namely a checkbox labeled "Add column header data in table cells" (see below).
+* __Screen reader compatibility__: All data regions, such as the summary grid, the selected rule text box and the rule details/actions text box, are now focusable and have accessible names and/or descriptions. In XUL tables, however, only rows, and not individual data cells are focusable, and row or column header information is not read by screen reader software.
+* To improve the accessibility of the data tables, the preference described above was added and has the following effect.
+  * When screen reader compatibility mode is selected, column header data is included in table data cells, typically as either prefixes or suffixes, along with the pertinent result data.
+  * This mode is suboptimal for sighted users, but for screen reader users, all of the result information in each table is now accessible.
+
+### v0.16.6
+20 Oct 2014 &mdash; OAA Evaluation Library v0.9.5
+
+* Reworked the Rule Details view:
+  * Rule summary now appears alone as second-level header, no longer within a text box
+  * Rule result value (abbreviated) is now displayed at the top right with color-coded background (same as summary grid on other two views)
+  * Moved the ACTIONS message into the rule info text
+  * Renamed Rule Information tab to Details/Actions and made it the first tab
+  * Changed ordering of rule info sections in Details/Actions tab
+  * Added tooltips for rule result value, highlight menulist and highlight menuitmes
+* In the Category/Guideline view, reduced number of rows in Rule Results table from 12 to 10
+* Added preference named extensions.ainspector.advanced.hideVersionId
+  * Set to true by default (i.e. version is hidden)
+  * Accessible via about:config
+
+### v0.16.5
+15 Sep 2014 &mdash; OAA Evaluation Library v0.9.5
+
+* Rules added or modified in Forms and Links categories
+* Added a user preference for the 'Rerun Evaluation' button that allows for delayed automatic evaluation (from 5 sec. to 1 min.).
+  * This permits the user to manipulate dynamic features in a web page until a desired state is achieved, and the browser to maintain focus on the page while the reevaluation runs automatically, i.e., without the user having to physically interact with the 'Rerun Evaluation' button.
+* Removed the keyboard shortcut for toggling the sidebar, along with associated user preferences.
+* Reorganized the Preferences dialog panels.
+{% endmarkdown %}
+{% endblock %}

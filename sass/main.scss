@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+// Variables
+
+$font-family-base: Helvetica, Arial, sans-serif;
+
+$font-size-base:   15px;
+$font-size-small:  round($font-size-base * 0.875);
+
+$font-weight-base: normal;
+$font-weight-menu: 300;
+
+$line-height-base: 1.5;
+
+$spacing-unit:     24px;
+$spacing-list:     $spacing-unit * 0.25;
+
+$text-color:       #222;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Round font-size to nearest tenth
+
+@mixin font-size($factor) {
+  font-size: round($font-size-base * $factor * 10) / 10;
+}
+
+// Font size factors
+
+$h1-normal: 2.5;
+$h1-laptop: 2.25;
+
+$h2-normal: 1.75;
+$h2-laptop: 1.5;
+
+$h3-normal: 1.375;
+$h3-laptop: 1.25;
+
+$h4-normal: 1.125;
+$h4-laptop: 1.125;
+
+$h2-menu-n: 1.5;
+$h2-menu-l: 1.25;
+$li-menu-n: 1.25;
+
+$dt-normal: 1.25;
+$subheader: 1.25;
+$code-size: 0.875;
+
+// Content area widths
+
+$content-width: 800px;
+$on-palm:       600px;
+$on-laptop:     800px;
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials
+
+@import "base", "layout";

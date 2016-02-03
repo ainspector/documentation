@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% set title = "Getting Started" %}
+{% set description = "An introduction to using AInspector Sidebar for web accessibility evaluation" %}
+
+{% block content %}
+{% markdown %}
+## How does AInspector Sidebar work?
+
+When AInspector Sidebar is loaded into the sidebar panel of Firefox, it automatically evaluates the current page and each subsequent page that you load into the content area of the browser. This applies to the current tab only.
+
+When you open new tabs, by default the sidebar is not loaded. You can choose to have AInspector Sidebar either active or inactive in each of the tabs you currently have open.
+
+When AInspector Sidebar is closed, it becomes inactive, and no evaluations are performed.
+
+## Launching the sidebar
+
+There are two methods for launching AInspector Sidebar in the current browser tab:
+
+* From the main menu: Choose View > Sidebar > AInspector Sidebar
+* Click the toolbar button labeled &lsquo;AI&rsquo;
+
+Note: When you first install AInspector Sidebar, the &lsquo;AI&rsquo; toolbar button is placed in the navigation toolbar of Firefox. If you have many buttons there already, it may not be immediately apparent or even visible.
+
+To reposition or remove the button from the toolbar, choose View > Toolbars > Customize...
+
+## Preferences dialog
+
+The Preferences dialog contains important settings for evaluation parameters and how results are displayed. It contains two panels:
+
+In the **General** panel, you can:
+
+* Customize the &lsquo;Views&rsquo; menu
+* Choose how the &lsquo;Rerun Evaluation&rsquo; button functions
+* Select &lsquo;Screen reader compatibility&rsquo; mode (see below)
+
+In the **Evaluation** panel, you can:
+
+* Choose the Ruleset
+* Choose whether &lsquo;Pass&rsquo; and &lsquo;N/A&rsquo; results are displayed
+
+The keyboard shortcut for opening the Preferences dialog:
+
+* Win: `Ctrl` `.` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `.`
+
+## Screen reader support
+
+Due to shortcomings in the way that tables are rendered in Firefox extensions (actually the problems are with XUL tree elements), column header information is not conveyed automatically by screen readers.
+
+To work around these deficiencies, AInspector Sidebar provides a Preferences setting labeled &lsquo;Add column header data in table cells&rsquo;. This is found on the Evaluation panel under the heading &lsquo;Screen reader compatibility&rsquo;.
+
+When this option is selected, additional information is inserted into each table data cell that fully describes the data in relation to its column header label.
+
+For example, without this setting, a row in the Summary table might be rendered as &ldquo;Landmarks one three seven&rdquo;. When screen reader compatibility mode is selected, the same row is read as &ldquo;Landmarks: one rule with violations, three rules with manual checks, seven rules pass.&rdquo;
+
+For more information on screen reader support, see the [Screen Reader Users](screen-reader.html) guide.
+
+<!-- TODO
+## Keyboard support
+
+* Tabbing through a view
+* Choosing a menu item
+* Choosing details from a table row
+-->
+
+## Keyboard shortcuts
+
+Views menu
+: Win: `Alt` `A` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Ctrl` `A`
+
+Back one level
+: Win: `Ctrl` `Backspace` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `Backspace`
+
+Back to Summary view
+: Win: `Ctrl` `Shift` `Backspace` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `Shift` `Backspace`
+
+Open Preferences dialog
+: Win: `Ctrl` `.` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `.`
+{% endmarkdown %}
+{% endblock %}

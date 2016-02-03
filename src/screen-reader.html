@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% set title = "Screen Reader Users" %}
+{% set count = "118" %}
+
+{% block content %}
+{% markdown %}
+This guide describes the structure of the informational views in AInspector Sidebar. It includes an overview of the scope and types of information provided by AInspector, along with tips on navigating between and among the three view levels.
+
+It is intended as a guide for screen reader users, but anyone interested in how information is structured in AInspector Sidebar may find it useful.
+
+## Views and progressive disclosure of information
+
+When AInspector Sidebar evaluates the page loaded in Firefox, it produces a vast array of information. For example, when the **HTML5 & Aria Techniques** ruleset is selected, there is detailed information available from within the sidebar on {{ count }} accessibility rules (at the time of this writing). For each of these rules you can find information that includes its definition, purpose, the recommended techniques for conforming to the rule, associated WCAG 2.0 Success Criteria, etc.
+
+And while not all {{ count }} rules will have been evaluated for any given page (since some, and usually many rules will be **not applicable**), information is provided on all of the rules that were applicable down to the element level. Thus for some rules at the rule details level, there are lists of potentially hundreds of elements along with pertinent evaluation result information for each element. AInspector Sidebar allows you to drill down to this information for each rule evaluation result.
+
+### Sidebars have a very limited amount of space
+
+XUL sidebars in Firefox operate within a certain set of constraints. One of these relates to its geometry, namely a maximum width and height. Another is that the sidebar itself is not scrollable. Thus, AInspector Sidebar makes use of views for its progressive display of information.
+
+When you select a view, the information for the current view is replaced by the information for the selected view. It is important to note that the sidebar provides information for only one view at a time.
+
+To compensate for the limited amount of space, AInspector Sidebar attempts to make it easy to navigate between and among views. At all times, the **Views menu** is available near the top of the sidebar. Additionally, there are **keyboard shortcuts** provided that take you "back one level" in the view hierarchy, or "all the way back" to the top level Summary view from any lower level.
+
+### How views are structured
+
+To emphasize the scope of the information available within AInspector Sidebar, let&apos;s use the HTML5 & ARIA Techniques ruleset as an example. For any evaluation using this ruleset, there are:
+
+* 1 Summary view,
+* 25 Rule Category or WCAG Guideline views (including the All Rules view), and
+* {{ count }} Rule Details views
+
+for a grand total of 144 separate informational views.
+
+However, this becomes much simpler when you consider the information structure with respect to view levels. The three levels are, ordered from high to low:
+
+* Summary view
+* Rule Category view
+* Rule Details view
+
+The information is structured such that you can drill down from the top-level Summary view to each of the mid-level Rule Category views and from any of these to lower-level Rule Details views.
+
+### Walkthrough of navigation through view levels
+
+When you first load the sidebar, you are at the **Summary** view, which sits at the top level of the hierarchy. When you are at one of the two lower level views, you can always come back to the Summary view using the keyboard shortcut Ctrl+Shift+Delete, or from the Views menu button (described below) by selecting Summary.
+
+From each row in the Summary table, you can select the corresponding Rule Category or WCAG Guideline rule results. This mid-level view, called the **Rule Category** view, provides a table of rule results. The rows in the table provide evaluation results for each rule included in the Rule Category. From each row in the Rule Results table you can drill down to the lowest level Rule Details view.
+
+The **Rule Details** view sits at the bottom level of the view hierarchy. It contains a tab panel that allows you to choose either the **Actions/Details** information pertaining to the rule itself, or the **Element Results** table that provides evaluation result information for each element to which the selected rule was applied.
+
+From the Element Results table in the Rule Details view, you can drill down even further, by activating the row, or by tabbing to the **Inspect Element** button when a row is selected. This takes you to the Firefox Page Inspector, which provides the HTML markup of the element, along with CSS information and more.
+
+### Recapitulation
+
+* The Summary view sits at the top level. From each row in its Rule Categories or WCAG Guidelines table you can drill down to:
+* the Rule Category view. From each row in its Rule Results table you can drill down to:
+* the Rule Details view, which includes rule information and element results. From each row in its Element Results table you can drill down to:
+* Firefox Page Inspector information
+
+## Landing points within views
+
+These are the starting points for information within views:
+
+* Summary view: view title plus summary grid info
+* Rule Category view: name of category or guideline plus summary grid info
+* Rule Details view: rule description summary and evaluation result
+
+When you **drill down** for more detailed information, the landing points for the Rule Category and Rule Details views are the above mentioned starting points.
+
+Each of these landing points sits at the top of the information structure that is unique to the selected view. Just before each of these landing points are the interactive elements (covered below) that are common to all views, namely the Views menu and, except for the Summary view, the Back button.
+
+### Summary grid
+
+The summary grid provides aggregated **rule result values**. Specifically, these are the number of **Violations**, **Warnings**, **Manual checks** and **Passes** for all rules specific to the selected view.
+
+There are two contexts for summary grid information:
+
+* In the Summary view, the summary grid provides rule evaluation results across all Rule Categories and WCAG Guidelines.
+* In the Rule Category view, the summary grid provides rule evaluation results across all rules included in the category or guideline.
+
+## Selecting views
+
+### Table rows are interactive elements
+
+When a table row is selected, for example by using the up and down arrow keys, you can **drill down** to more detailed information for that row by doing one of the following:
+
+* Press spacebar or enter
+* Tab one tab stop to the Details button and press spacebar
+* Double-click the row with the mouse
+
+### The Views menu
+
+The Views menu is always available near the top of the current view. It contains the following items:
+
+* Summary view
+* Each Rule Category view (currently there are 12) plus the All Rules view
+* Optionally, each WCAG Guideline view (12 total, made available from Preferences > General)
+
+To get to the Views menu from the landing point of any new view, simply Shift+Tab one tab stop. In other words, the Views menu is just one tab stop before the landing point of a new view.
+
+The keyboard shortcut for going directly to the Views menu from anywhere in the sidebar:
+
+* Win: `Alt` `A` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Ctrl` `A`
+
+### The Details button
+
+As mentioned above, the Details button provides another way of drilling down to information for the selected row when you are in the Summary view or a Rule Category view. It is always available as the next tab stop when you tab out of the main table in either of these two views.
+
+### The Back button
+
+The Back button is the first interactive element on each Rule Category or Rule Details view. From these views it is available as the tab stop just before the Views menu. Also, the keyboard shortcut Ctrl+Delete has the same functionality in these views as the Back button.
+
+Since the Summary view sits at the top level of the hierarchy, the Back button is not availabe from this view.
+
+## Navigating back up the hierarchy
+
+When you navigate from the Rule Details view back to the Rule Category from which you drilled down, or from the Rule Category view back to the Summary view, the focus context is maintained in the view you are revisiting. This means that focus will be automatically set to the previously selected row, if a row was selected. Note that this only pertains to navigating back up the hierarchy, for example by using the Back button or the keyboard shortcut `Ctrl` `Backspace` (on the Mac: `Cmd` `Backspace`).
+
+## Loading new browser pages
+
+When you are in the Summary view or Rule Category view and you follow a link to a new page or reload the current page, focus is reset to the starting point of the view, i.e., the view title plus summary grid info. This is because the view may contain all new information, and the element that previously held focus may no longer be valid.
+
+When you are in the Rule Details view and you follow a link to a new page or reload the current page, you are taken back to the previously selected Rule Category view. In this view, the probability is even higher that the information that was displayed will no longer be pertinent for the evaluation of the new page.
+
+## Information format is not HTML
+
+An important last point: The format in which all of this information is displayed within the sidebar is not HTML. Sidebar extensions for Firefox are created using the XML User Interface Language, or XUL. XUL has buttons, menus, headings, tab panels, table-like structures and text areas, but none of these are HTML.
+{% endmarkdown %}
+{% endblock %}
