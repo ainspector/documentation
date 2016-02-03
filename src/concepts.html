@@ -5,44 +5,47 @@
 {% markdown %}
 ## Basic Concepts
 
-Rule
-: A low-level accessibility conformance requirement with numerous components, the most basic of which are a definition, an evaluation function, and result messages. When a rule is evaluated, it is assigned a rule result value.
+<dl>
+<dt>Rule</dt>
+<dd>A low-level accessibility conformance requirement with numerous components, the most basic of which are a definition, an evaluation function, and result messages. When a rule is evaluated, it is assigned a rule result value.</dd>
 
-Target resources
-: The set of HTML elements to which a particular rule applies. These include familiar elements such as `div`, `img` and `input`, as well as a pseudo-element designated as `page`, which is a placeholder for the document element. When a rule is evaluated, each of its target resources is assigned an element result value.
+<dt>Target resources</dt>
+<dd>The set of HTML elements to which a particular rule applies. These include familiar elements such as `div`, `img` and `input`, as well as a pseudo-element designated as `page`, which is a placeholder for the document element. When a rule is evaluated, each of its target resources is assigned an element result value.</dd>
 
-Ruleset
-: A set of rules that embodies specific standards conformance goals. Each rule within a ruleset is designated as either required or recommended, according to its relationship to the conformance goals of the ruleset.
+<dt>Ruleset</dt>
+<dd>A set of rules that embodies specific standards conformance goals. Each rule within a ruleset is designated as either required or recommended, according to its relationship to the conformance goals of the ruleset.</dd>
 
-Evaluation
-: The application of all evaluation functions of all rules in the selected ruleset to their corresponding target resources in a web page, and the subsequent collection of all evaluation results and messages, at both the rule and element levels, into a dataset.
+<dt>Evaluation</dt>
+<dd>The application of all evaluation functions of all rules in the selected ruleset to their corresponding target resources in a web page, and the subsequent collection of all evaluation results and messages, at both the rule and element levels, into a dataset.</dd>
 
-Rule result
-: The aggregate result of a rule evaluation with respect to its target resources (all of its target elements and/or the entire page).
+<dt>Rule result</dt>
+<dd>The aggregate result of a rule evaluation with respect to its target resources (all of its target elements and/or the entire page).</dd>
 
-Element result
-: The result of a rule evaluation with respect to one of its target elements.
-
+<dt>Element result</dt>
+<dd>The result of a rule evaluation with respect to one of its target elements.</dd>
+</dl>
 
 ## Rule and element result values
 
-`V` Violation
-: One or more target elements fail the requirements of a required rule
+<dl>
+<dt>`V` Violation</dt>
+<dd>One or more target elements fail the requirements of a required rule</dd>
 
-`W` Warning
-: One or more target elements fail the requirements of a recommended rule
+<dt>`W` Warning</dt>
+<dd>One or more target elements fail the requirements of a recommended rule</dd>
 
-`MC` Manual check
-: Unable to programmatically determine a result &#8211; evaluation requires human inspection
+<dt>`MC` Manual check</dt>
+<dd>Unable to programmatically determine a result &#8211; evaluation requires human inspection</dd>
 
-`P` Pass
-: All rule requirements were satisfied
+<dt>`P` Pass</dt>
+<dd>All rule requirements were satisfied</dd>
 
-`N/A` Not applicable
-: Rule was not applied because there were no relevant target elements
+<dt>`N/A` Not applicable</dt>
+<dd>Rule was not applied because there were no relevant target elements</dd>
 
-`H` Hidden
-: Target element was not evaluated because it is hidden (either visually or from assistive technologies)
+<dt>`H` Hidden</dt>
+<dd>Target element was not evaluated because it is hidden (either visually or from assistive technologies)</dd>
+</dl>
 
 ## More about rules, target resources and result values
 
