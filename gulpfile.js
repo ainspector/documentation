@@ -1,10 +1,10 @@
 
-var browserSync    = require('browser-sync').create(),
-    gulp           = require('gulp'),
-    nunjucksRender = require('gulp-nunjucks-render'),
-    sass           = require('gulp-sass'),
-    marked         = require('marked'),
-    markdown       = require('nunjucks-markdown');
+var browserSync  = require('browser-sync').create(),
+  gulp           = require('gulp'),
+  nunjucksRender = require('gulp-nunjucks-render'),
+  sass           = require('gulp-sass'),
+  marked         = require('marked'),
+  markdown       = require('nunjucks-markdown');
 
 var markedOptions = {
   renderer: new marked.Renderer(),
@@ -17,14 +17,14 @@ var markedOptions = {
   smartypants: false
 };
 
-var nunjucksConfig = {
+var nunjucksOptions = {
   lstripBlocks: true,
   trimBlocks: true,
   watch: false
 };
 
 gulp.task('nunjucks', function () {
-  var env = nunjucksRender.nunjucks.configure(['templates/'], nunjucksConfig);
+  var env = nunjucksRender.nunjucks.configure(['templates/'], nunjucksOptions);
   marked.setOptions(markedOptions);
   markdown.register(env, marked);
 
