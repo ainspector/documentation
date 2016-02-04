@@ -19,7 +19,6 @@ The output of <code>main.scss</code> forms the contents of <code>build/css/main.
 
 ## To Do
 
-1. Update the CSS/Sass files by removing what is not used or needed.
-1. Gain a better understanding of CSS media queries to determine whether settings are optimal.
-1. Integrate the logo image, possibly in the header.
-1. Use browser-sync.
+1. Learn more about CSS media queries to determine whether width settings are optimal.
+1. Replace Bootstrap with a simpler CSS framework, possible Pure.css.
+1. Try using <code>postcss</code> with <code>autoprefixer</code> and <code>cssnext</code> in place of Sass.
