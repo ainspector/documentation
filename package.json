@@ -1,13 +1,17 @@
 {
-  "name": "static-gulp",
+  "name": "documentation",
   "version": "1.0.0",
-  "description": "Static site generator using Gulp and Sass",
+  "description": "Static site generator for AInspector Sidebar documentation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nicholas Hoyt",
-  "license": "ISC",
+  "license": "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/ainspector/documentation.git"
+  },
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
