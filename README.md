@@ -28,8 +28,8 @@ There are two macros in <code>macros.html</code>: <code>shortcut</code> and <cod
 The conventions and expected inputs for calling these macros:
 
 1. Use lowercase for all values, including key names (e.g. 'ctrl' and 'cmd').
-2. When the string 'cmd' is used, both macros automatically add <code>aria-label="command"</code>.
-3. The 'kbd' CSS class is defined in <code>sass/_base.html</code>.
+1. When the string 'cmd' is used, both macros automatically add <code>aria-label="command"</code>.
+1. The 'kbd' CSS class is defined in <code>sass/_base.html</code>.
 
 ## To Do
 
