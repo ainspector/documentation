@@ -18,6 +18,7 @@ var markedOptions = {
 };
 
 var nunjucksOptions = {
+  autoescape: false,
   lstripBlocks: true,
   trimBlocks: true,
   watch: false
