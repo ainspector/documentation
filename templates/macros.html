@@ -1,0 +1,7 @@
+{% macro shortcut(list) %}
+{% for item in list %}{% if not loop.first %}+{% endif %}<code class="kbd">{{ item }}</code>{% endfor %}
+{% endmacro %}
+
+{% macro winMacShortcut(win, mac) %}
+Win: {% for item in win %}{% if not loop.first %}+{% endif %}<code class="kbd">{{ item }}</code>{% endfor %} / Mac: {% for item in mac %}{% if not loop.first %}+{% endif %}<code class="kbd">{{ item }}</code>{% endfor %}
+{% endmacro %}
