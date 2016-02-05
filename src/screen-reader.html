@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "macros.html" import shortcut, winMacShortcut %}
 {% set title = "Screen Reader Users" %}
 {% set count = "128" %}
 
@@ -42,7 +43,7 @@ The information is structured such that you can drill down from the top-level Su
 
 ### Walkthrough of navigation through view levels
 
-When you first load the sidebar, you are at the **Summary** view, which sits at the top level of the hierarchy. When you are at one of the two lower level views, you can always come back to the Summary view using the keyboard shortcut Ctrl+Shift+Delete, or from the Views menu button (described below) by selecting Summary.
+When you first load the sidebar, you are at the **Summary** view, which sits at the top level of the hierarchy. When you are at one of the two lower level views, you can always come back to the Summary view using the keyboard shortcut: {{ winMacShortcut(["ctrl", "shift", "backspace"], ["cmd", "shift", "backspace"]) }}, or from the Views menu button (described below) by selecting Summary.
 
 From each row in the Summary table, you can select the corresponding Rule Category or WCAG Guideline rule results. This mid-level view, called the **Rule Category** view, provides a table of rule results. The rows in the table provide evaluation results for each rule included in the Rule Category. From each row in the Rule Results table you can drill down to the lowest level Rule Details view.
 
@@ -96,11 +97,11 @@ The Views menu is always available near the top of the current view. It contains
 * Each Rule Category view (currently there are 12) plus the All Rules view
 * Optionally, each WCAG Guideline view (12 total, made available from Preferences > General)
 
-To get to the Views menu from the landing point of any new view, simply Shift+Tab one tab stop. In other words, the Views menu is just one tab stop before the landing point of a new view.
+To get to the Views menu from the landing point of any new view, simply {{ shortcut(["shift", "tab"]) }} one tab stop. In other words, the Views menu is just one tab stop before the landing point of a new view.
 
 The keyboard shortcut for going directly to the Views menu from anywhere in the sidebar:
 
-* Win: `Alt` `A` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Ctrl` `A`
+* {{ winMacShortcut(["alt", "a"], ["ctrl", "a"]) }}
 
 ### The Details button
 
@@ -108,13 +109,13 @@ As mentioned above, the Details button provides another way of drilling down to 
 
 ### The Back button
 
-The Back button is the first interactive element on each Rule Category or Rule Details view. From these views it is available as the tab stop just before the Views menu. Also, the keyboard shortcut Ctrl+Delete has the same functionality in these views as the Back button.
+The Back button is the first interactive element on each Rule Category or Rule Details view. From these views it is available as the tab stop just before the Views menu. Also, the keyboard shortcut: {{ winMacShortcut(["ctrl", "backspace"], ["cmd", "backspace"]) }} has the same functionality in these views as the Back button.
 
 Since the Summary view sits at the top level of the hierarchy, the Back button is not availabe from this view.
 
 ## Navigating back up the hierarchy
 
-When you navigate from the Rule Details view back to the Rule Category from which you drilled down, or from the Rule Category view back to the Summary view, the focus context is maintained in the view you are revisiting. This means that focus will be automatically set to the previously selected row, if a row was selected. Note that this only pertains to navigating back up the hierarchy, for example by using the Back button or the keyboard shortcut `Ctrl` `Backspace` (on the Mac: `Cmd` `Backspace`).
+When you navigate from the Rule Details view back to the Rule Category from which you drilled down, or from the Rule Category view back to the Summary view, the focus context is maintained in the view you are revisiting. This means that focus will be automatically set to the previously selected row, if a row was selected. Note that this only pertains to navigating back up the hierarchy, for example by using the Back button or the keyboard shortcut: {{ winMacShortcut(["ctrl", "backspace"], ["cmd", "backspace"]) }}
 
 ## Loading new browser pages
 

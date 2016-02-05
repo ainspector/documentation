@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "macros.html" import winMacShortcut %}
 {% set title = "Getting Started" %}
 {% set description = "An introduction to using AInspector Sidebar for web accessibility evaluation" %}
 
@@ -17,7 +18,7 @@ When AInspector Sidebar is closed, it becomes inactive, and no evaluations are p
 There are three methods for opening and closing AInspector Sidebar in the current browser tab:
 
 * Click the &lsquo;AI&rsquo; button in the Firefox toolbar
-* Use the &lsquo;Toggle sidebar&rsquo; keyboard shortcut: Win: `Ctrl` `Shift` `U` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `Shift` `U`
+* Use the &lsquo;Toggle sidebar&rsquo; keyboard shortcut: {{ winMacShortcut(["ctrl", "shift", "u"], ["cmd", "shift", "u"]) }}
 * From the Firefox main menu: Choose View > Sidebar > AInspector Sidebar
 
 Note: When you first install AInspector Sidebar, the &lsquo;AI&rsquo; toolbar button is placed in the navigation toolbar of Firefox. If you have many buttons there already, it may not be immediately apparent or even visible.
@@ -41,7 +42,7 @@ In the **Evaluation** panel, you can:
 
 The keyboard shortcut for opening the Preferences dialog:
 
-* Win: `Ctrl` `.` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `.`
+* {{ winMacShortcut(["ctrl", "."], ["cmd", "."]) }}
 
 ## Screen reader support
 
@@ -67,19 +68,19 @@ For more information on screen reader support, see the [Screen Reader Users](scr
 
 <dl>
 <dt>Toggle sidebar</dt>
-<dd>Win: `Ctrl` `Shift` `U` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `Shift` `U`</dd>
+<dd>{{ winMacShortcut(["ctrl", "shift", "u"], ["cmd", "shift", "u"]) }}</dd>
 
 <dt>Open Views menu</dt>
-<dd>Win: `Alt` `A` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Ctrl` `A`</dd>
+<dd>{{ winMacShortcut(["alt", "a"], ["ctrl", "a"]) }}</dd>
 
 <dt>Back one level</dt>
-<dd>Win: `Ctrl` `Backspace` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `Backspace`</dd>
+<dd>{{ winMacShortcut(["ctrl", "backspace"], ["cmd", "backspace"]) }}</dd>
 
 <dt>Back to Summary view</dt>
-<dd>Win: `Ctrl` `Shift` `Backspace` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `Shift` `Backspace`</dd>
+<dd>{{ winMacShortcut(["ctrl", "shift", "backspace"], ["cmd", "shift", "backspace"]) }}</dd>
 
 <dt>Open Preferences dialog</dt>
-<dd>Win: `Ctrl` `.` &nbsp;&nbsp;&nbsp;&nbsp; Mac: `Cmd` `.`</dd>
+<dd>{{ winMacShortcut(["ctrl", "."], ["cmd", "."]) }}</dd>
 </dl>
 {% endmarkdown %}
 {% endblock %}
