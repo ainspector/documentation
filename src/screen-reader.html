@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% from "macros.html" import shortcut, winMacShortcut %}
 {% set title = "Screen Reader Users" %}
-{% set count = "128" %}
+{% from "macros.html" import shortcut, winMacShortcut %}
+{% from "settings.html" import html5_aria %}
 
 {% block content %}
 {% markdown %}
@@ -11,9 +11,9 @@ It is intended as a guide for screen reader users, but anyone interested in how 
 
 ## Views and progressive disclosure of information
 
-When AInspector Sidebar evaluates the page loaded in Firefox, it produces a vast array of information. For example, when the **HTML5 & Aria Techniques** ruleset is selected, there is detailed information available from within the sidebar on {{ count }} accessibility rules (at the time of this writing). For each of these rules you can find information that includes its definition, purpose, the recommended techniques for conforming to the rule, associated WCAG 2.0 Success Criteria, etc.
+When AInspector Sidebar evaluates the page loaded in Firefox, it produces a vast array of information. For example, when the **{{ html5_aria.name }}** ruleset is selected, there is detailed information available from within the sidebar on {{ html5_aria.rules_total }} accessibility rules (at the time of this writing). For each of these rules you can find information that includes its definition, purpose, the recommended techniques for conforming to the rule, associated WCAG 2.0 Success Criteria, etc.
 
-And while not all {{ count }} rules will have been evaluated for any given page (since some, and usually many rules will be **not applicable**), information is provided on all of the rules that were applicable down to the element level. Thus for some rules at the rule details level, there are lists of potentially hundreds of elements along with pertinent evaluation result information for each element. AInspector Sidebar allows you to drill down to this information for each rule evaluation result.
+And while not all {{ html5_aria.rules_total }} rules will have been evaluated for any given page (since some, and usually many rules will be **not applicable**), information is provided on all of the rules that were applicable down to the element level. Thus for some rules at the **Rule Details** level, there are lists of potentially hundreds of elements along with pertinent evaluation result information for each element. AInspector Sidebar allows you to drill down to this information for each rule evaluation result.
 
 ### Sidebars have a very limited amount of space
 
@@ -25,21 +25,21 @@ To compensate for the limited amount of space, AInspector Sidebar attempts to ma
 
 ### How views are structured
 
-To emphasize the scope of the information available within AInspector Sidebar, let&apos;s use the HTML5 & ARIA Techniques ruleset as an example. For any evaluation using this ruleset, there are:
+To illustrate the scope of the information available within AInspector Sidebar, consider the {{ html5_aria.name }} ruleset as an example. For any evaluation using this ruleset, the following views are available:
 
-* 1 Summary view,
-* 25 Rule Category or WCAG Guideline views (including the All Rules view), and
-* {{ count }} Rule Details views
+* 1 Summary view
+* 25 Rule Category and WCAG Guideline views (including the All Rules view)
+* {{ html5_aria.rules_total }} Rule Details views (one for each rule)
 
-for a grand total of 154 separate informational views.
+for a grand total of  {{ [1, 25, html5_aria.rules_total] | sum }} separate informational views.
 
-However, this becomes much simpler when you consider the information structure with respect to view levels. The three levels are, ordered from high to low:
+Even though there are many different views, the information structure, with respect to view levels, is relatively simple. The three levels, ordered from high to low, are:
 
-* Summary view
-* Rule Category view
-* Rule Details view
+* Summary
+* Rule Category or WCAG Guideline
+* Rule Details
 
-The information is structured such that you can drill down from the top-level Summary view to each of the mid-level Rule Category views and from any of these to lower-level Rule Details views.
+The information is structured such that you can drill down from the top-level Summary view to each of the mid-level Rule Category or WCAG Guideline views and from any of these to lower-level Rule Details views.
 
 ### Walkthrough of navigation through view levels
 

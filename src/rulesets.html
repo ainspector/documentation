@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% set title = "Rulesets" %}
+{% from "settings.html" import html5_aria, html4_legacy %}
 
 {% block content %}
 {% markdown %}
@@ -11,18 +12,20 @@ The rulesets included with AInspector Sidebar were created in conjunction with t
 
 To select a ruleset, open the **Preferences** dialog and select the **Evaluation** panel. Two rulesets are currently available:
 
-## HTML5 and ARIA Techniques
+## {{ html5_aria.name }}
 
 Evaluation of WCAG 2.0 Level A and AA conformance using HTML5 and ARIA accessibility techniques
 
 ARIA Landmarks are required for the identification and labeling of the sections of content on a web page. The ruleset requires the use of ARIA widget roles for identifying and describing interactive elements (e.g. popup menus, grids, trees, etc.) that cannot be not described by the native semantics of HTML5 form control and links elements.
 
 * Version: {{ site.evaluation_library_version }}
-* Total Rules: 131
-* Required Rules: 118
-* Recommended Rules: 13
+* Total Rules: {{ html5_aria.rules_total }}
+* Required Rules: {{ html5_aria.rules_required }}
+* Recommended Rules: {{ html5_aria.rules_recommended }}
 
-## HTML4 Legacy Techniques
+More information is available at the FAE [{{ html5_aria.name }}]({{ html5_aria.url }}) page.
+
+## {{ html4_legacy.name }}
 
 Evaluation of WCAG 2.0 Level A and AA conformance using HTML4 accessibility techniques, but allows for the use of HTML5 and ARIA techniques
 
@@ -31,8 +34,11 @@ ARIA landmarks are NOT required, but if used must follow landmark and sectioning
 This means the developer will need to do more manual checking and have a high-level understanding of assistive technologies to describe widgets (typically using offscreen text and/or small images with ALT text) and define and manage the roles, properties and states of interactive elements.
 
 * Version: {{ site.evaluation_library_version }}
-* Total Rules: 121
-* Required Rules: 79
-* Recommended Rules: 42
+* Total Rules: {{ html4_legacy.rules_total }}
+* Required Rules: {{ html4_legacy.rules_required }}
+* Recommended Rules: {{ html4_legacy.rules_recommended }}
+
+More information is available at the FAE [{{ html4_legacy.name }}]({{ html4_legacy.url }}) page.
+
 {% endmarkdown %}
 {% endblock %}
