@@ -4,48 +4,59 @@
 
 {% block content %}
 {% markdown %}
-## Important Note: Compatibility with Firefox
+## Important Note: AInspector Sidebar compatibility with Firefox
 
-After the Nov. 14, 2017 release of Firefox 57, in order to run AInspector Sidebar it will be necessary to install an older version of Firefox.
+After the Nov. 14, 2017 release of Firefox 57, in order to run AInspector
+Sidebar it will be necessary to install an older version of Firefox.
 
-We recommend installing the Firefox Extended Support Release (ESR). More information about the Firefox ESR program can be found on the [Firefox ESR FAQ page](https://www.mozilla.org/en-US/firefox/organizations/faq/).
+We recommend installing the Firefox Extended Support Release (ESR). More
+information about the Firefox ESR program can be found on the [Firefox ESR
+FAQ page](https://www.mozilla.org/en-US/firefox/organizations/faq/).
 
 ## Installing the Firefox ESR
 
-Mozilla recommends uninstalling the standard release version of Firefox before you install the ESR version.
+### 1. Save your Firefox bookmarks
+* Launch your current version of Firefox
+* Select `Bookmarks` > `Show All Bookmarks`
+* From the toolbar, select the `Import and backup your bookmarks` menu button
+(the `star` icon)
+* From that button's menu, select `Backup...`
+* Save your bookmarks to a location you will remember
 
-If you decide not to follow this recommendation, please note that, by default, both the ESR and standard release versions will share the same Firefox profile, which includes bookmarks, add-ons and any user interface customizations and other preferences you have specified.
+### 2. Uninstall your current version of Firefox
+* Use the procedure appropriate to your operating system
 
-[Download Firefox ESR](https://www.mozilla.org/en-US/firefox/organizations/all/)
+### 3. Download and install Firefox ESR
 
-Once you've installed Firefox ESR, continue with the following steps.
+* [Download Firefox ESR](https://www.mozilla.org/en-US/firefox/organizations/all/)
+* Launch the installer and follow the instructions it provides
 
-## [Visit the {{ site.mozilla_addons }} page]({{ site.mozilla_url }})
+In most cases, if you've followed the steps outlined above, Firefox ESR will
+automatically find your bookmarks and other settings that were part of your
+Firefox profile from the version you uninstalled.
 
-There you will find the latest signed version of AInspector Sidebar. If you are running a compatible version of Firefox, you can click the `Add to Firefox` button to install. Otherwise, please continue with the following steps.
+If this is not the case, you can import the bookmarks you saved into Firefox
+ESR.
 
-## Download the XPI file
+## Installing AInspector Sidebar
 
-Select the `Download Anyway` link.
+### Method 1: Using a compatible version of Firefox (e.g. ESR)
 
-Please note the following:
+* [Visit the {{ site.mozilla_addons }} page]({{ site.mozilla_url }})
+* Select the `Add to Firefox` button
 
-* The folder location to which you download the file
+### Method 2: Using a different browser
 
-* The name of the XPI file, for example: `{{ site.ainspector_xpi_file }}`
-
-## Install within Firefox
-
-Once you have downloaded the XPI file, launch Firefox and follow these steps:
-
-* From the main menu in Firefox, go to Tools > Add-ons
-
-* At the top of the Add-ons Manager page, select the &lsquo;Tools for all add-ons&rsquo; button (the &lsquo;gear&rsquo; icon), and from its menu, select &lsquo;Install Add-on From File...&rsquo;
-
-* In the &lsquo;Select add-on to install&rsquo; dialog, select the downloaded XPI file and choose &lsquo;Open&rsquo;
-
-* An Add-ons Manager dialog box will appear &#8211; select the &lsquo;Install Now&rsquo; button
-
-* When prompted, select the &lsquo;Restart Firefox&rsquo; button
+* Download the XPI file by selecting the `Download Anyway` link
+* Note: Remember the folder location to which you download the file
+* Launch a compatible version of Firefox
+* From the main menu in Firefox, go to `Tools` > `Add-ons`
+* At the top of the Add-ons Manager page, select the `Tools for all add-ons`
+button (the `gear` icon)
+* From its menu, select `Install Add-on From File...`
+* In the `Select add-on to install` dialog, select the downloaded XPI file
+and choose `Open`.
+* An Add-ons Manager dialog box will appear &#8211; select the `Install Now` button.
+* When prompted, select the `Restart Firefox` button
 {% endmarkdown %}
 {% endblock %}
