@@ -5,11 +5,15 @@
 
 {% block content %}
 {% markdown %}
-To install the latest version, `v{{ site.ainspector_version}}`, please visit the [**{{ site.mozilla_addons }} page**]({{ site.mozilla_url }}).
+The latest version of AInspector Sidebar, `v{{ site.ainspector_version}}`, is available at the [**{{ site.mozilla_addons }} page**]({{ site.mozilla_url }}).
 
-<strong>Important Note:</strong> Beginning with the Nov. 14, 2017 release of Firefox 57, AInspector Sidebar will no longer be compatible with that, or any later, version of Firefox.
+<strong>Important Note:</strong> AInspector Sidebar is incompatible with Firefox Quantum (versions 57 and later).
 
-It will still be possible to continue running AInspector Sidebar, but this will require installing an older version of Firefox. For more information, see the [Installation Guide](installation.html).
+To use AInspector Sidebar, you will need to:
+* Install [Firefox Extended Support Release (ESR) version 52.7.3](https://www.mozilla.org/en-US/firefox/organizations/all/)
+* Install AInspector Sidebar as an add-on to Firefox ESR
+
+For more information, see the [Installation Guide](installation.html).
 
 <img src="images/summary.png" alt="Summary view screen shot"/>
 {% endmarkdown %}

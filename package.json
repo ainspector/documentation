@@ -8,16 +8,16 @@
   },
   "author": "Nicholas Hoyt",
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/ainspector/documentation.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ainspector/documentation.git"
   },
   "devDependencies": {
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^2.24.1",
     "gulp": "^3.9.0",
-    "gulp-nunjucks-render": "^1.1.0",
-    "gulp-sass": "^2.1.1",
-    "marked": "^0.3.5",
-    "nunjucks-markdown": "^1.1.0"
+    "gulp-nunjucks-render": "^2.2.2",
+    "gulp-sass": "^4.0.1",
+    "marked": "^0.3.19",
+    "nunjucks-markdown": "^2.0.1"
   }
 }

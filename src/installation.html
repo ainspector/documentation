@@ -6,27 +6,25 @@
 {% markdown %}
 ## Important Note: AInspector Sidebar compatibility with Firefox
 
-After the Nov. 14, 2017 release of Firefox 57, in order to run AInspector
-Sidebar it will be necessary to install an older version of Firefox.
+In order to run AInspector Sidebar, you will need to:
+* Install [Firefox Extended Support Release (ESR) version 52.7.3](https://www.mozilla.org/en-US/firefox/organizations/all/)
+* Install AInspector Sidebar as an add-on to Firefox ESR
 
-*We recommend installing the Firefox Extended Support Release (ESR).* More
-information about the Firefox ESR program can be found on the [Firefox ESR
+This is due to changes that Mozilla made to Firefox, beginning with version 57,
+also known as Firefox Quantum.
+
+More information about the Firefox ESR program can be found on the [Firefox ESR
 Overview page](https://www.mozilla.org/en-US/firefox/organizations/faq/).
 
-The philosophy at Mozilla is that if you install the ESR, by default that
-will be your only installed version of Firefox.
+<strong>Please note:</strong> The philosophy at Mozilla is that if you install
+the ESR, by default that will be your only installed version of Firefox.
 
 There are ways of installing multiple release versions of Firefox, but they
 require using separate installation directories and profiles. For example,
 [this Mozilla Support Forum article](https://support.mozilla.org/en-US/questions/1149213)
 explains how to do this on macOS.
 
-A simple way to have both the ESR and a newer version of Firefox installed
-is to install the [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/),
-which is configured to automatically update to the latest beta release of
-Firefox, using a separate profile.
-
-The following instructions assume that the ESR will be your only installed
+The following instructions assume that Firefox ESR will be your only installed
 version of Firefox.
 
 ## Installing the Firefox ESR
@@ -56,7 +54,7 @@ ESR.
 
 ## Installing AInspector Sidebar
 
-### Method 1: Using a compatible version of Firefox (e.g. ESR)
+### Method 1: Using Firefox ESR (v52.7.3)
 
 * [Visit the {{ site.mozilla_addons }} page]({{ site.mozilla_url }})
 * Select the `Add to Firefox` button
@@ -66,7 +64,7 @@ ESR.
 * [Visit the {{ site.mozilla_addons }} page]({{ site.mozilla_url }})
 * Download the XPI file by selecting the `Download Anyway` link
 * Note: Remember the folder location to which you download the file
-* Launch a compatible version of Firefox
+* Launch Firefox ESR
 * From the main menu in Firefox, go to `Tools` > `Add-ons`
 * At the top of the Add-ons Manager page, select the `Tools for all add-ons`
 button (the `gear` icon)
